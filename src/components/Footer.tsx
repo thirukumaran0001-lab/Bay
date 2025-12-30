@@ -46,7 +46,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 hover:text-red-500 transition-colors">
                 <Phone className="w-5 h-5 text-red-600" />
-                <span className="font-medium">+1 (555) 123-4567</span>
+                <span className="font-medium">+60103668054</span>
               </li>
               <li className="flex items-center gap-3 hover:text-red-500 transition-colors">
                 <MapPin className="w-5 h-5 text-red-600" />
