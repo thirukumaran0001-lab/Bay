@@ -10,7 +10,7 @@ export function Hero({ onBookCall }: HeroProps) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/3962287/pexels-photo-3962287.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'url(https://images.pexels.com/photos/416474/pexels-photo-416474.jpeg?auto=compress&cs=tinysrgb&w=1600)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/80"></div>
