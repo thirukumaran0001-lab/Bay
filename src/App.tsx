@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Hero } from './components/Hero';
+import { AboutUs } from './components/AboutUs';
 import { Process } from './components/Process';
 import { Features } from './components/Features';
 import { BookingForm } from './components/BookingForm';
@@ -20,6 +21,7 @@ function App() {
         onBookCall={() => setIsBookingFormOpen(true)}
         onLearnMore={() => setShowProcessDetails(true)}
       />
+      <AboutUs />
       <Process />
       <Features />
       <Footer />
