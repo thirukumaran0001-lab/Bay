@@ -16,9 +16,9 @@ export interface ContactSubmission {
 export async function submitContactForm(data: ContactSubmission) {
   const { data: result, error } = await supabase
     .from('contact_submissions')
-    .insert([data])
+    .insert(data)
     .select()
-    .maybeSingle();
+    .single();
 
   if (error) throw error;
   return result;
