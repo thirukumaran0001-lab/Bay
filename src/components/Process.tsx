@@ -4,26 +4,26 @@ export function Process() {
   const steps = [
     {
       icon: Flame,
-      title: 'Smelting',
-      description: 'Advanced high-temperature smelting process with precision temperature control and monitoring.',
+      title: 'Melting & Smelting',
+      description: 'Raw aluminum scrap is melted in high-efficiency reverberatory furnaces at 700-750°C. Impurities like iron, zinc, and oxides are removed through fluxing and degassing to achieve 99%+ purity molten aluminum base.',
       step: '01'
     },
     {
       icon: Beaker,
-      title: 'Alloying',
-      description: 'Carefully controlled alloying process to achieve the perfect ADC 12 composition and properties.',
+      title: 'Alloying & Composition',
+      description: 'Precise amounts of silicon (9-12%), copper (2-3%), and other elements are added to create specific alloys: ADC 12 for die-casting, LM24 for automotive components, or A380 for high-pressure applications with exact compositional control.',
       step: '02'
     },
     {
       icon: CheckCircle,
-      title: 'Quality Control',
-      description: 'Rigorous testing and quality assurance at every stage to ensure superior product standards.',
+      title: 'Casting & Solidification',
+      description: 'Molten alloy is poured into pre-heated steel or graphite molds at controlled rates. The ingots solidify from outside-in, forming a dense crystalline structure. Each ingot weighs 7-25kg with uniform grain distribution for optimal mechanical properties.',
       step: '03'
     },
     {
       icon: Package,
-      title: 'Delivery',
-      description: 'Secure packaging and efficient logistics to deliver your aluminum alloy on time, every time.',
+      title: 'Quality Testing & Delivery',
+      description: 'Spectrometric analysis verifies alloy composition. Physical testing checks density, hardness, and surface quality. Ingots are stamped with grade certification, packaged to prevent oxidation, and delivered with full material traceability documentation.',
       step: '04'
     }
   ];
@@ -36,10 +36,10 @@ export function Process() {
             <span className="text-white text-sm font-bold tracking-wider uppercase">Our Process</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Precision at Every Stage
+            The Aluminum Ingot Making Process
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            From raw materials to finished product, our state-of-the-art process ensures unmatched quality.
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            From molten metal to precision-engineered alloys, we transform raw aluminum into high-performance ingots through controlled metallurgical processes that ensure consistent quality and exact specifications.
           </p>
         </div>
 
