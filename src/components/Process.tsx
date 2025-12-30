@@ -1,6 +1,10 @@
 import { Flame, Beaker, CheckCircle, Package } from 'lucide-react';
 
-export function Process() {
+interface ProcessProps {
+  onViewDetails?: () => void;
+}
+
+export function Process({ onViewDetails }: ProcessProps) {
   const steps = [
     {
       icon: Flame,
@@ -49,7 +53,8 @@ export function Process() {
             return (
               <div
                 key={index}
-                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden"
+                onClick={onViewDetails}
+                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden cursor-pointer"
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-red-600"></div>
 
@@ -70,6 +75,16 @@ export function Process() {
               </div>
             );
           })}
+        </div>
+
+        <div className="text-center mt-12">
+          <button
+            onClick={onViewDetails}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            View Detailed Process
+            <Package className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>
