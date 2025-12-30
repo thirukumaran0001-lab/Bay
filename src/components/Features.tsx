@@ -35,84 +35,83 @@ export function Features() {
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-      <div className="absolute top-0 left-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-
+    <section className="relative py-24 bg-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-4">
-            <span className="text-cyan-400 text-sm font-medium">Why Choose Us</span>
+          <div className="inline-block px-5 py-2.5 rounded bg-red-600 mb-6">
+            <span className="text-white text-sm font-bold tracking-wider uppercase">Why Choose Us</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Excellence in Every Ingot
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Industry-leading ADC 12 aluminum alloy for automotive, aerospace, and industrial applications.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl bg-gray-800/30 border border-gray-700 hover:border-cyan-500/50 transition-all duration-500 backdrop-blur-sm overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
 
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-500">
-                    <Icon className="w-7 h-7 text-cyan-400" />
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-red-600 flex items-center justify-center mb-6 group-hover:bg-red-700 transition-all duration-300">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
-
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-20 p-12 rounded-3xl bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-cyan-500/20 backdrop-blur-sm">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-4">
-                ADC 12 Specifications
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                Our ADC 12 aluminum alloy meets and exceeds industry standards with optimal composition for die-casting applications.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
-                  <span>Silicon (Si): 9.6-12.0%</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
-                  <span>Copper (Cu): 1.5-3.5%</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
-                  <span>Excellent fluidity and castability</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
-                  <span>High dimensional stability</span>
-                </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center bg-gray-50 p-12 border-l-8 border-red-600">
+          <div className="relative overflow-hidden shadow-2xl h-96">
+            <img
+              src="https://images.pexels.com/photos/3962629/pexels-photo-3962629.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Industrial aluminum smelting operation"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 border-b-4 border-red-600 pb-4 inline-block">
+              ADC 12 Specifications
+            </h3>
+            <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+              Our ADC 12 aluminum alloy meets and exceeds industry standards with optimal composition for die-casting applications.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">Silicon (Si): 9.6-12.0%</span>
               </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 flex items-center justify-center">
-                <Atom className="w-32 h-32 text-cyan-400/30" />
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">Copper (Cu): 1.5-3.5%</span>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">Excellent fluidity and castability</span>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">High dimensional stability</span>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">Superior corrosion resistance</span>
               </div>
             </div>
           </div>

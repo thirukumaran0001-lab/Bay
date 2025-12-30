@@ -9,7 +9,7 @@ function App() {
   const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-gray-900">
       <Hero onBookCall={() => setIsBookingFormOpen(true)} />
       <Process />
       <Features />
