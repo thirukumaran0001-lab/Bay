@@ -5,12 +5,12 @@ export function Features() {
     {
       icon: Shield,
       title: 'Superior Quality',
-      description: 'ADC 12 aluminum alloy with exceptional strength, durability, and corrosion resistance for demanding applications.'
+      description: 'Premium aluminum alloys with exceptional strength, durability, and corrosion resistance for demanding applications.'
     },
     {
       icon: Atom,
-      title: 'Perfect Composition',
-      description: 'Optimized silicon content (9.6-12%) ensuring excellent castability and mechanical properties.'
+      title: 'Multiple Alloys',
+      description: 'Comprehensive range including ADC 12, LM24, A380, and custom alloy compositions tailored to your specifications.'
     },
     {
       icon: Zap,
@@ -45,7 +45,7 @@ export function Features() {
             Excellence in Every Ingot
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Industry-leading ADC 12 aluminum alloy for automotive, aerospace, and industrial applications.
+            Industry-leading aluminum alloys including ADC 12, LM24, A380, and custom specifications for automotive, aerospace, and industrial applications.
           </p>
         </div>
 
@@ -79,31 +79,31 @@ export function Features() {
         <div className="bg-gray-50 p-12 border-l-8 border-red-600">
           <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-6 border-b-4 border-red-600 pb-4 inline-block">
-              ADC 12 Specifications
+              Our Alloy Range
             </h3>
             <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-              Our ADC 12 aluminum alloy meets and exceeds industry standards with optimal composition for die-casting applications.
+              We produce a comprehensive range of aluminum alloys meeting and exceeding international standards, with ADC 12 being our flagship product for die-casting applications.
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">Silicon (Si): 9.6-12.0%</span>
+                <span className="font-bold text-gray-900">ADC 12 - High silicon die-casting alloy (Si: 9.6-12%)</span>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">Copper (Cu): 1.5-3.5%</span>
+                <span className="font-bold text-gray-900">LM24 - General purpose die-casting alloy</span>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">Excellent fluidity and castability</span>
+                <span className="font-bold text-gray-900">A380 - High-strength alloy for complex castings</span>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">High dimensional stability</span>
+                <span className="font-bold text-gray-900">Custom compositions tailored to specifications</span>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">Superior corrosion resistance</span>
+                <span className="font-bold text-gray-900">All grades meet international standards</span>
               </div>
             </div>
           </div>

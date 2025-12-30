@@ -28,7 +28,7 @@ export function ProcessDetails({ onBack }: ProcessDetailsProps) {
             </div>
             <h1 className="text-5xl font-bold text-white mb-4">Our Smelting Excellence</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced aluminum smelting processes backed by rigorous quality testing protocols
+              Advanced aluminum smelting processes for multiple alloy grades backed by rigorous quality testing protocols
             </p>
           </div>
 
@@ -84,7 +84,7 @@ export function ProcessDetails({ onBack }: ProcessDetailsProps) {
                     <h3 className="text-xl font-bold text-white">Alloying & Refinement</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
-                    Precise amounts of copper and silicon are added to create ADC 12 alloy specifications. Degassing agents remove hydrogen and other impurities, while flux treatments eliminate oxide inclusions.
+                    Precise amounts of alloying elements are added to create specific alloy compositions including ADC 12, LM24, A380, and custom specifications. Degassing agents remove hydrogen and other impurities, while flux treatments eliminate oxide inclusions.
                   </p>
                 </div>
 
@@ -214,7 +214,8 @@ export function ProcessDetails({ onBack }: ProcessDetailsProps) {
               </div>
 
               <div className="bg-gray-800 border border-gray-700 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-white mb-6">ADC 12 Alloy Specifications</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">ADC 12 Alloy Specifications (Example)</h3>
+                <p className="text-gray-400 mb-4 text-sm">We produce multiple alloy grades. Below shows our flagship ADC 12 composition:</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left">
                     <thead>

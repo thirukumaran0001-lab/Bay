@@ -13,17 +13,17 @@ export function Footer() {
               <span className="text-xl font-bold text-white tracking-tight">Bay Aluminium</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Leading provider of premium ADC 12 aluminum alloy with cutting-edge smelting technology.
+              Leading provider of premium aluminum ingots and alloys with cutting-edge smelting technology.
             </p>
           </div>
 
           <div>
             <h3 className="text-white font-bold mb-4 text-sm tracking-wider uppercase border-b-2 border-red-600 pb-2 inline-block">Products</h3>
             <ul className="space-y-2 text-gray-400 mt-4">
-              <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">ADC 12 Ingots</li>
+              <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">ADC 12 Alloy</li>
+              <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">LM24 Alloy</li>
+              <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">A380 Alloy</li>
               <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">Custom Alloys</li>
-              <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">Die-Casting Solutions</li>
-              <li className="hover:text-red-500 transition-colors cursor-pointer font-medium">Technical Support</li>
             </ul>
           </div>
 
