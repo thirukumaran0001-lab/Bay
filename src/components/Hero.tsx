@@ -8,6 +8,15 @@ interface HeroProps {
 export function Hero({ onBookCall, onLearnMore }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(https://images.pexels.com/photos/416474/pexels-photo-416474.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/80"></div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 text-center">
         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-red-600/90 border border-red-500 mb-8 backdrop-blur-sm hover:bg-red-600 transition-all duration-300">
           <Factory className="w-4 h-4 text-white" />
