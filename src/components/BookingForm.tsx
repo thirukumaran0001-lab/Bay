@@ -39,8 +39,9 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
         });
       }, 2000);
     } catch (err) {
-      setError('Failed to submit form. Please try again.');
-      console.error(err);
+      console.error('Form submission error:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Failed to submit form. Please try again.';
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
