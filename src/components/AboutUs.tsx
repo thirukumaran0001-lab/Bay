@@ -2,24 +2,27 @@ import { Users, Award, Target, TrendingUp } from 'lucide-react';
 
 export function AboutUs() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+    <section id="about" className="py-32 bg-gray-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 via-transparent to-red-600/5"></div>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+        <div className="text-center mb-20">
+          <div className="inline-block px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
+            <span className="text-white text-xs font-medium tracking-[0.15em] uppercase">About Us</span>
+          </div>
+          <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6 tracking-tight">
             About Bay Aluminium
           </h2>
-          <div className="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
             Building excellence through experience and dedication
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div>
-            <h3 className="text-3xl font-bold text-white mb-6">
+            <h3 className="text-4xl font-bold text-white mb-8 tracking-tight">
               Our Story
             </h3>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-gray-400 leading-relaxed font-light text-lg">
               <p>
                 With over 5 years of proven excellence in aluminum smelting and production, Bay Aluminium has established itself as a trusted partner in the global metals industry. Our journey began with a simple commitment: to deliver the highest quality aluminum products through precision engineering and unwavering dedication.
               </p>
@@ -32,46 +35,59 @@ export function AboutUs() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 border-l-4 border-red-600 hover:border-red-500 transition-all duration-300 shadow-lg">
-              <Users className="w-12 h-12 text-red-500 mb-4" />
-              <h4 className="text-2xl font-bold text-white mb-2">Expert Team</h4>
-              <p className="text-gray-400">Skilled professionals with years of industry experience</p>
+          <div className="grid grid-cols-2 gap-5">
+            <div className="group relative bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <Users className="w-10 h-10 text-red-400 mb-4" />
+                <h4 className="text-xl font-semibold text-white mb-2">Expert Team</h4>
+                <p className="text-gray-400 text-sm font-light leading-relaxed">Skilled professionals with years of industry experience</p>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 border-l-4 border-red-600 hover:border-red-500 transition-all duration-300 shadow-lg">
-              <Award className="w-12 h-12 text-red-500 mb-4" />
-              <h4 className="text-2xl font-bold text-white mb-2">Certified Quality</h4>
-              <p className="text-gray-400">ISO standards and industry certifications</p>
+            <div className="group relative bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <Award className="w-10 h-10 text-red-400 mb-4" />
+                <h4 className="text-xl font-semibold text-white mb-2">Certified Quality</h4>
+                <p className="text-gray-400 text-sm font-light leading-relaxed">ISO standards and industry certifications</p>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 border-l-4 border-red-600 hover:border-red-500 transition-all duration-300 shadow-lg">
-              <Target className="w-12 h-12 text-red-500 mb-4" />
-              <h4 className="text-2xl font-bold text-white mb-2">Precision Focus</h4>
-              <p className="text-gray-400">Meticulous attention to every detail</p>
+            <div className="group relative bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <Target className="w-10 h-10 text-red-400 mb-4" />
+                <h4 className="text-xl font-semibold text-white mb-2">Precision Focus</h4>
+                <p className="text-gray-400 text-sm font-light leading-relaxed">Meticulous attention to every detail</p>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 border-l-4 border-red-600 hover:border-red-500 transition-all duration-300 shadow-lg">
-              <TrendingUp className="w-12 h-12 text-red-500 mb-4" />
-              <h4 className="text-2xl font-bold text-white mb-2">Continuous Growth</h4>
-              <p className="text-gray-400">Investing in innovation and technology</p>
+            <div className="group relative bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <TrendingUp className="w-10 h-10 text-red-400 mb-4" />
+                <h4 className="text-xl font-semibold text-white mb-2">Continuous Growth</h4>
+                <p className="text-gray-400 text-sm font-light leading-relaxed">Investing in innovation and technology</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-red-600 to-red-700 p-12 shadow-2xl">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold text-white mb-2">5+</div>
-              <div className="text-red-100 font-semibold uppercase tracking-wide">Years of Excellence</div>
+        <div className="relative bg-gradient-to-r from-red-600 to-red-500 p-16 rounded-3xl shadow-2xl shadow-red-600/20 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAgOC44NC03LjE2IDE2LTE2IDE2cy0xNi03LjE2LTE2LTE2IDcuMTYtMTYgMTYtMTYgMTYgNy4xNiAxNiAxNnptMCAwYzAgOC44NC03LjE2IDE2LTE2IDE2cy0xNi03LjE2LTE2LTE2IDcuMTYtMTYgMTYtMTYgMTYgNy4xNiAxNiAxNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+          <div className="grid md:grid-cols-3 gap-12 text-center relative">
+            <div className="group">
+              <div className="text-6xl font-bold text-white mb-3 tracking-tight group-hover:scale-110 transition-transform duration-500">5+</div>
+              <div className="text-red-50 font-light text-sm tracking-[0.15em] uppercase">Years of Excellence</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold text-white mb-2">50+</div>
-              <div className="text-red-100 font-semibold uppercase tracking-wide">Global Partners</div>
+            <div className="group">
+              <div className="text-6xl font-bold text-white mb-3 tracking-tight group-hover:scale-110 transition-transform duration-500">50+</div>
+              <div className="text-red-50 font-light text-sm tracking-[0.15em] uppercase">Global Partners</div>
             </div>
-            <div>
-              <div className="text-5xl font-bold text-white mb-2">100%</div>
-              <div className="text-red-100 font-semibold uppercase tracking-wide">Commitment to Quality</div>
+            <div className="group">
+              <div className="text-6xl font-bold text-white mb-3 tracking-tight group-hover:scale-110 transition-transform duration-500">100%</div>
+              <div className="text-red-50 font-light text-sm tracking-[0.15em] uppercase">Commitment to Quality</div>
             </div>
           </div>
         </div>

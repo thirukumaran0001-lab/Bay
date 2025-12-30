@@ -29,43 +29,44 @@ export function Process() {
   ];
 
   return (
-    <section className="relative py-24 bg-gray-100 overflow-hidden">
+    <section className="relative py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 via-transparent to-red-600/5"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2.5 rounded bg-red-600 mb-6">
-            <span className="text-white text-sm font-bold tracking-wider uppercase">Our Process</span>
+        <div className="text-center mb-20">
+          <div className="inline-block px-5 py-2.5 rounded-full bg-red-600/10 border border-red-600/20 mb-6">
+            <span className="text-red-600 text-xs font-medium tracking-[0.15em] uppercase">Our Process</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
             The Aluminum Ingot Making Process
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
             From molten metal to precision-engineered alloys, we transform raw aluminum into high-performance ingots through controlled metallurgical processes that ensure consistent quality and exact specifications.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden"
+                className="group relative bg-white border border-gray-200 hover:border-red-500 rounded-2xl transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-red-500/10 overflow-hidden hover:scale-105"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-red-600"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <div className="p-8">
-                  <div className="absolute top-6 right-6 text-6xl font-black text-gray-100 leading-none">
+                <div className="p-8 relative">
+                  <div className="absolute top-6 right-6 text-7xl font-black text-gray-50 leading-none group-hover:text-red-50 transition-colors duration-500">
                     {step.step}
                   </div>
 
                   <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-red-600 flex items-center justify-center group-hover:bg-red-700 transition-all duration-300">
-                      <Icon className="w-8 h-8 text-white" />
+                    <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center group-hover:bg-red-500 group-hover:scale-110 transition-all duration-500">
+                      <Icon className="w-7 h-7 text-white" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 relative">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm font-light relative">{step.description}</p>
                 </div>
               </div>
             );

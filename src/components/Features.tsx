@@ -35,39 +35,40 @@ export function Features() {
   ];
 
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-32 bg-gray-900 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 via-transparent to-red-600/5"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2.5 rounded bg-red-600 mb-6">
-            <span className="text-white text-sm font-bold tracking-wider uppercase">Why Choose Us</span>
+        <div className="text-center mb-20">
+          <div className="inline-block px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
+            <span className="text-white text-xs font-medium tracking-[0.15em] uppercase">Why Choose Us</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl sm:text-6xl font-bold text-white mb-6 tracking-tight">
             Excellence in Every Ingot
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
             Industry-leading aluminum alloys including ADC 12, LM24, LM25, A7, A380, and custom specifications for automotive, aerospace, and industrial applications.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500 overflow-hidden hover:scale-105"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <div className="p-8">
-                  <div className="w-14 h-14 bg-red-600 flex items-center justify-center mb-6 group-hover:bg-red-700 transition-all duration-300">
-                    <Icon className="w-7 h-7 text-white" />
+                <div className="p-8 relative">
+                  <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-500 group-hover:scale-110 transition-all duration-500">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-semibold text-white mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed font-light text-sm">
                     {feature.description}
                   </p>
                 </div>
@@ -76,42 +77,39 @@ export function Features() {
           })}
         </div>
 
-        <div className="bg-gray-50 p-12 border-l-8 border-red-600">
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 border-b-4 border-red-600 pb-4 inline-block">
+        <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-12 rounded-3xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent"></div>
+          <div className="relative">
+            <h3 className="text-4xl font-bold text-white mb-6 tracking-tight">
               Our Alloy Range
             </h3>
-            <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+            <p className="text-gray-400 mb-10 leading-relaxed text-lg font-light">
               We produce a comprehensive range of aluminum alloys meeting and exceeding international standards, with ADC 12 being our flagship product for die-casting applications.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">ADC 12 - High silicon die-casting alloy (Si: 9.6-12%)</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="group flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-500"></div>
+                <span className="text-gray-300 font-light">ADC 12 - High silicon die-casting alloy (Si: 9.6-12%)</span>
               </div>
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">LM24 - General purpose die-casting alloy</span>
+              <div className="group flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-500"></div>
+                <span className="text-gray-300 font-light">LM24 - General purpose die-casting alloy</span>
               </div>
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">LM25 - Sand and gravity die-casting alloy</span>
+              <div className="group flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-500"></div>
+                <span className="text-gray-300 font-light">LM25 - Sand and gravity die-casting alloy</span>
               </div>
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">A7 - High-purity aluminum for electrical applications</span>
+              <div className="group flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-500"></div>
+                <span className="text-gray-300 font-light">A7 - High-purity aluminum for electrical applications</span>
               </div>
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">A380 - High-strength alloy for complex castings</span>
+              <div className="group flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-500"></div>
+                <span className="text-gray-300 font-light">A380 - High-strength alloy for complex castings</span>
               </div>
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">Custom compositions tailored to specifications</span>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
-                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
-                <span className="font-bold text-gray-900">All grades meet international standards</span>
+              <div className="group flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-red-500/50 transition-all duration-500">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-500"></div>
+                <span className="text-gray-300 font-light">Custom compositions tailored to specifications</span>
               </div>
             </div>
           </div>
