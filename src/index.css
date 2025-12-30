@@ -54,3 +54,11 @@
     animation: glow 2s ease-in-out infinite;
   }
 }
+
+spline-viewer #logo {
+  display: none !important;
+}
+
+spline-viewer::part(logo) {
+  display: none !important;
+}
