@@ -22,7 +22,7 @@ function App() {
         onLearnMore={() => setShowProcessDetails(true)}
       />
       <AboutUs />
-      <Process onViewDetails={() => setShowProcessDetails(true)} />
+      <Process />
       <Features />
       <Footer />
       <BookingForm
