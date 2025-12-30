@@ -2,9 +2,10 @@ import { ArrowRight, Factory } from 'lucide-react';
 
 interface HeroProps {
   onBookCall: () => void;
+  onLearnMore: () => void;
 }
 
-export function Hero({ onBookCall }: HeroProps) {
+export function Hero({ onBookCall, onLearnMore }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       <div
@@ -43,7 +44,10 @@ export function Hero({ onBookCall }: HeroProps) {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 
-          <button className="px-8 py-4 border-2 border-white text-white font-bold rounded hover:bg-white/10 transition-all duration-300">
+          <button
+            onClick={onLearnMore}
+            className="px-8 py-4 border-2 border-white text-white font-bold rounded hover:bg-white/10 transition-all duration-300"
+          >
             Learn More
           </button>
         </div>
