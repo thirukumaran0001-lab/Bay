@@ -1,6 +1,8 @@
 import { Flame, Beaker, CheckCircle, Package } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function Process() {
+  const navigate = useNavigate();
   const steps = [
     {
       icon: Flame,
@@ -49,7 +51,8 @@ export function Process() {
             return (
               <div
                 key={index}
-                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden"
+                onClick={() => navigate('/process')}
+                className="group relative bg-white border-2 border-gray-200 hover:border-red-600 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden cursor-pointer"
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-red-600"></div>
 

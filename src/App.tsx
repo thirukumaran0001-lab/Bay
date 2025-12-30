@@ -1,35 +1,15 @@
-import { useState } from 'react';
-import { Hero } from './components/Hero';
-import { AboutUs } from './components/AboutUs';
-import { Process } from './components/Process';
-import { Features } from './components/Features';
-import { BookingForm } from './components/BookingForm';
-import { Footer } from './components/Footer';
-import { ProcessDetails } from './components/ProcessDetails';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { ProcessPage } from './pages/ProcessPage';
 
 function App() {
-  const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
-  const [showProcessDetails, setShowProcessDetails] = useState(false);
-
-  if (showProcessDetails) {
-    return <ProcessDetails onBack={() => setShowProcessDetails(false)} />;
-  }
-
   return (
-    <div className="min-h-screen bg-gray-900">
-      <Hero
-        onBookCall={() => setIsBookingFormOpen(true)}
-        onLearnMore={() => setShowProcessDetails(true)}
-      />
-      <AboutUs />
-      <Process />
-      <Features />
-      <Footer />
-      <BookingForm
-        isOpen={isBookingFormOpen}
-        onClose={() => setIsBookingFormOpen(false)}
-      />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/process" element={<ProcessPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
