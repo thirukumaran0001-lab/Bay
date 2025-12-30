@@ -45,7 +45,7 @@ export function Features() {
             Excellence in Every Ingot
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Industry-leading aluminum alloys including ADC 12, LM24, A380, and custom specifications for automotive, aerospace, and industrial applications.
+            Industry-leading aluminum alloys including ADC 12, LM24, LM25, A7, A380, and custom specifications for automotive, aerospace, and industrial applications.
           </p>
         </div>
 
@@ -92,6 +92,14 @@ export function Features() {
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
                 <span className="font-bold text-gray-900">LM24 - General purpose die-casting alloy</span>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">LM25 - Sand and gravity die-casting alloy</span>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
+                <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>
+                <span className="font-bold text-gray-900">A7 - High-purity aluminum for electrical applications</span>
               </div>
               <div className="flex items-start gap-4 p-4 bg-white border-l-4 border-red-600 shadow">
                 <div className="w-2 h-2 rounded-full bg-red-600 mt-2"></div>

@@ -31,7 +31,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
         </p>
 
         <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Precision smelting operations delivering superior quality aluminum ingots including ADC 12, LM24, A380, and custom alloys for automotive, aerospace, and industrial applications worldwide.
+          Precision smelting operations delivering superior quality aluminum ingots including ADC 12, LM24, LM25, A7, A380, and custom alloys for automotive, aerospace, and industrial applications worldwide.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
