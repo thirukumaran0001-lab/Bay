@@ -50,7 +50,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 hover:text-red-500 transition-colors">
                 <MapPin className="w-5 h-5 text-red-600" />
-                <span className="font-medium">Rasa Mukiim</span>
+                <span className="font-medium">Lot 18, Jalan Zurah 5A, Selangor, Malaysia.</span>
               </li>
             </ul>
           </div>
