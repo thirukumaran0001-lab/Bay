@@ -8,12 +8,12 @@ interface HeroProps {
 export function Hero({ onBookCall, onLearnMore }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-      <div className="absolute inset-0">
-        <spline-viewer
-          url="https://prod.spline.design/2iA7ifyFKCQ9SoZK/scene.splinecode"
-          className="w-full h-full"
-        ></spline-viewer>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px)',
+          }}></div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 text-center">
