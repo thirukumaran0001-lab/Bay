@@ -76,15 +76,7 @@ export function Features() {
           })}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center bg-gray-50 p-12 border-l-8 border-red-600">
-          <div className="relative overflow-hidden shadow-2xl h-96">
-            <img
-              src="https://images.pexels.com/photos/3962629/pexels-photo-3962629.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Industrial aluminum smelting operation"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
+        <div className="bg-gray-50 p-12 border-l-8 border-red-600">
           <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-6 border-b-4 border-red-600 pb-4 inline-block">
               ADC 12 Specifications
