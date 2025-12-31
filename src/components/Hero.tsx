@@ -43,7 +43,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
           </div>
         </div>
 
-        <div className="absolute bottom-16 left-8 sm:left-12 lg:left-16 grid grid-cols-3 gap-16 max-w-4xl">
+        <div className="absolute bottom-16 left-8 sm:left-12 lg:left-16 grid grid-cols-3 gap-24 max-w-4xl">
           <div>
             <div className="text-4xl font-light text-white mb-2">99.9%</div>
             <div className="text-gray-400 text-sm font-light">Purity Grade</div>
