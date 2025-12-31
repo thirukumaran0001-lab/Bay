@@ -25,7 +25,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
             Premium aluminum ingots and alloys for automotive, aerospace, and industrial applications worldwide.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-10 items-start">
+          <div className="flex flex-col sm:flex-row gap-10 items-start mb-32">
             <button
               onClick={onBookCall}
               className="group px-12 py-5 bg-white text-black font-medium text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-3"
