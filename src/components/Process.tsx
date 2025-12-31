@@ -22,39 +22,30 @@ export function Process() {
     }
   ];
 
-  const stepColors = [
-    { gradient: 'from-red-500 via-orange-500 to-amber-500', glow: 'shadow-orange-500/50', ring: 'ring-orange-400' },
-    { gradient: 'from-amber-500 via-yellow-500 to-lime-500', glow: 'shadow-yellow-500/50', ring: 'ring-yellow-400' },
-    { gradient: 'from-cyan-500 via-blue-500 to-indigo-500', glow: 'shadow-blue-500/50', ring: 'ring-blue-400' },
-    { gradient: 'from-emerald-500 via-teal-500 to-cyan-500', glow: 'shadow-teal-500/50', ring: 'ring-teal-400' }
-  ];
-
   return (
-    <section className="py-40 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(251,146,60,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-
-      <div className="relative max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+    <section className="py-40 bg-black">
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <div className="mb-32">
-          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-orange-400 via-amber-300 to-cyan-400 bg-clip-text text-transparent mb-12 tracking-tight leading-[1.1]">
+          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-light text-white mb-12 tracking-tight leading-[1.1]">
             Our Process
           </h2>
-          <p className="text-xl sm:text-2xl text-blue-100 max-w-4xl font-light leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-400 max-w-4xl font-light leading-relaxed">
             From molten metal to precision-engineered alloys, we transform raw aluminum into high-performance ingots through controlled metallurgical processes.
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-24">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`group relative border-l-4 border-transparent hover:${stepColors[index].ring} pl-12 py-8 rounded-r-2xl bg-gradient-to-r from-white/5 to-transparent hover:from-white/10 hover:to-white/5 hover:shadow-2xl ${stepColors[index].glow} transition-all duration-500 hover:scale-[1.02]`}
+              className="border-t border-white/20 pt-12 grid md:grid-cols-12 gap-8"
             >
-              <div className={`absolute -left-8 top-8 w-16 h-16 rounded-full bg-gradient-to-br ${stepColors[index].gradient} flex items-center justify-center font-bold text-2xl text-white shadow-xl ${stepColors[index].glow} group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
-                {step.step}
+              <div className="md:col-span-2">
+                <div className="text-6xl font-light text-white/30">{step.step}</div>
               </div>
-              <div className="pl-8">
-                <h3 className={`text-3xl font-bold bg-gradient-to-r ${stepColors[index].gradient} bg-clip-text text-transparent mb-6 group-hover:scale-105 transition-transform duration-300`}>{step.title}</h3>
-                <p className="text-lg text-blue-100 leading-relaxed max-w-3xl">{step.description}</p>
+              <div className="md:col-span-10">
+                <h3 className="text-3xl font-light text-white mb-6">{step.title}</h3>
+                <p className="text-lg text-gray-400 font-light leading-relaxed max-w-3xl">{step.description}</p>
               </div>
             </div>
           ))}
