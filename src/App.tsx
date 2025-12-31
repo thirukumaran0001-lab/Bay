@@ -24,7 +24,7 @@ function App() {
       <AboutUs />
       <Process />
       <Features />
-      <Footer />
+      <Footer onProcessClick={() => setShowProcessDetails(true)} />
       <BookingForm
         isOpen={isBookingFormOpen}
         onClose={() => setIsBookingFormOpen(false)}

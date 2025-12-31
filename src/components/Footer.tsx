@@ -1,6 +1,10 @@
 import { Factory, Mail, Phone, MapPin } from 'lucide-react';
 
-export function Footer() {
+interface FooterProps {
+  onProcessClick?: () => void;
+}
+
+export function Footer({ onProcessClick }: FooterProps) {
   return (
     <footer className="relative bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
@@ -33,7 +37,7 @@ export function Footer() {
               <li>
                 <a href="#about" className="hover:text-red-400 transition-all duration-300 font-light inline-block hover:translate-x-1">About Us</a>
               </li>
-              <li className="hover:text-red-400 transition-all duration-300 cursor-pointer font-light hover:translate-x-1 inline-block">Our Process</li>
+              <li onClick={onProcessClick} className="hover:text-red-400 transition-all duration-300 cursor-pointer font-light hover:translate-x-1 inline-block">Our Process</li>
               <li className="hover:text-red-400 transition-all duration-300 cursor-pointer font-light hover:translate-x-1 inline-block">Quality Standards</li>
               <li className="hover:text-red-400 transition-all duration-300 cursor-pointer font-light hover:translate-x-1 inline-block">Certifications</li>
             </ul>
