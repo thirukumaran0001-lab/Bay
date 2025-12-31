@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-gray-900">
       <Hero
         onBookCall={() => setIsBookingFormOpen(true)}
         onLearnMore={() => setShowProcessDetails(true)}
