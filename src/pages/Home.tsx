@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Hero } from '../components/Hero';
 import { AboutUs } from '../components/AboutUs';
 import { Process } from '../components/Process';
@@ -7,12 +8,13 @@ import { BookingForm } from '../components/BookingForm';
 
 export function Home() {
   const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
       <Hero
         onBookCall={() => setIsBookingFormOpen(true)}
-        onLearnMore={() => window.location.href = '/process'}
+        onLearnMore={() => navigate('/process')}
       />
       <AboutUs />
       <Process />
