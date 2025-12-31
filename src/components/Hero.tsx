@@ -28,7 +28,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
           <div className="flex flex-col sm:flex-row gap-10 items-start mb-32">
             <button
               onClick={onBookCall}
-              className="group px-12 py-5 bg-white text-black font-medium text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-3"
+              className="group px-12 py-5 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-light text-lg hover:bg-white/20 hover:border-white/40 transition-all duration-300 flex items-center gap-3"
             >
               <span>Book a Call</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -36,7 +36,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
 
             <button
               onClick={onLearnMore}
-              className="px-12 py-5 border border-white/30 text-white font-medium text-lg hover:border-white transition-all duration-300"
+              className="px-12 py-5 border border-white/20 text-white font-light text-lg hover:border-white/40 hover:bg-white/5 transition-all duration-300"
             >
               Learn More
             </button>
