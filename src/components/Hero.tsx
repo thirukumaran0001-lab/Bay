@@ -10,7 +10,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0">
         <spline-viewer
-          url="https://prod.spline.design/2iA7ifyFKCQ9SoZK/scene.splinecode"
+          url="https://prod.spline.design/wy5ZRvozoQKCKgXR/scene.splinecode"
           className="w-full h-full"
         ></spline-viewer>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-gray-900/95"></div>
