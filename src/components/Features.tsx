@@ -35,36 +35,47 @@ export function Features() {
     'Custom compositions tailored to specifications'
   ];
 
+  const colors = [
+    { gradient: 'from-orange-500 to-red-500', bg: 'from-orange-50 to-red-50', border: 'border-orange-500', text: 'text-orange-600' },
+    { gradient: 'from-blue-500 to-cyan-500', bg: 'from-blue-50 to-cyan-50', border: 'border-blue-500', text: 'text-blue-600' },
+    { gradient: 'from-emerald-500 to-teal-500', bg: 'from-emerald-50 to-teal-50', border: 'border-emerald-500', text: 'text-emerald-600' },
+    { gradient: 'from-violet-500 to-purple-500', bg: 'from-violet-50 to-purple-50', border: 'border-violet-500', text: 'text-violet-600' },
+    { gradient: 'from-pink-500 to-rose-500', bg: 'from-pink-50 to-rose-50', border: 'border-pink-500', text: 'text-pink-600' },
+    { gradient: 'from-amber-500 to-yellow-500', bg: 'from-amber-50 to-yellow-50', border: 'border-amber-500', text: 'text-amber-600' }
+  ];
+
   return (
-    <section className="py-40 bg-white">
+    <section className="py-40 bg-gradient-to-b from-white via-blue-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <div className="mb-32">
-          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-light text-black mb-12 tracking-tight leading-[1.1]">
+          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-blue-600 bg-clip-text text-transparent mb-12 tracking-tight leading-[1.1]">
             Excellence in Every Ingot
           </h2>
-          <p className="text-xl sm:text-2xl text-gray-700 max-w-4xl font-light leading-relaxed">
+          <p className="text-xl sm:text-2xl text-slate-700 max-w-4xl font-light leading-relaxed">
             Industry-leading aluminum alloys for automotive, aerospace, and industrial applications worldwide.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 mb-32">
           {features.map((feature, index) => (
-            <div key={index} className="border-t border-gray-200 pt-8">
-              <h3 className="text-2xl font-light text-black mb-6">{feature.title}</h3>
-              <p className="text-lg text-gray-600 font-light leading-relaxed">{feature.description}</p>
+            <div key={index} className={`group relative border-l-4 ${colors[index].border} pl-8 py-6 rounded-r-xl bg-gradient-to-r ${colors[index].bg} hover:shadow-2xl transition-all duration-300 hover:scale-105`}>
+              <div className="absolute -left-2 top-8 w-4 h-4 rounded-full bg-gradient-to-br ${colors[index].gradient} animate-pulse"></div>
+              <h3 className={`text-2xl font-bold ${colors[index].text} mb-6 group-hover:scale-105 transition-transform duration-300`}>{feature.title}</h3>
+              <p className="text-lg text-slate-700 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="border-t border-gray-200 pt-16">
-          <h3 className="text-4xl sm:text-5xl font-light text-black mb-16 tracking-tight">
+        <div className="relative pt-16 pb-12 px-12 rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 shadow-2xl">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,146,60,0.1),transparent_70%)] rounded-3xl"></div>
+          <h3 className="relative text-4xl sm:text-5xl font-bold bg-gradient-to-r from-orange-400 via-amber-300 to-cyan-400 bg-clip-text text-transparent mb-16 tracking-tight">
             Our Alloy Range
           </h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="relative grid md:grid-cols-2 gap-8">
             {alloys.map((alloy, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-black mt-3 flex-shrink-0"></div>
-                <span className="text-lg text-gray-700 font-light leading-relaxed">{alloy}</span>
+              <div key={index} className="group flex items-start gap-4 p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-orange-400/50 transition-all duration-300 hover:scale-105">
+                <div className={`w-3 h-3 rounded-full bg-gradient-to-br ${colors[index % colors.length].gradient} mt-2 flex-shrink-0 group-hover:scale-150 group-hover:animate-pulse transition-all duration-300`}></div>
+                <span className="text-lg text-white font-medium leading-relaxed">{alloy}</span>
               </div>
             ))}
           </div>
