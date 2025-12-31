@@ -1,35 +1,27 @@
-import { useState } from 'react';
-import { Hero } from './components/Hero';
-import { AboutUs } from './components/AboutUs';
-import { Process } from './components/Process';
-import { Features } from './components/Features';
-import { BookingForm } from './components/BookingForm';
-import { Footer } from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { ADC12 } from './pages/ADC12';
+import { LM24 } from './pages/LM24';
+import { A380 } from './pages/A380';
+import { CustomAlloys } from './pages/CustomAlloys';
 import { ProcessDetails } from './components/ProcessDetails';
+import { Footer } from './components/Footer';
 
 function App() {
-  const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
-  const [showProcessDetails, setShowProcessDetails] = useState(false);
-
-  if (showProcessDetails) {
-    return <ProcessDetails onBack={() => setShowProcessDetails(false)} />;
-  }
-
   return (
-    <div className="min-h-screen bg-black">
-      <Hero
-        onBookCall={() => setIsBookingFormOpen(true)}
-        onLearnMore={() => setShowProcessDetails(true)}
-      />
-      <AboutUs />
-      <Process />
-      <Features />
-      <Footer onProcessClick={() => setShowProcessDetails(true)} />
-      <BookingForm
-        isOpen={isBookingFormOpen}
-        onClose={() => setIsBookingFormOpen(false)}
-      />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-black">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/adc12" element={<ADC12 />} />
+          <Route path="/lm24" element={<LM24 />} />
+          <Route path="/a380" element={<A380 />} />
+          <Route path="/custom-alloys" element={<CustomAlloys />} />
+          <Route path="/process" element={<ProcessDetails onBack={() => window.location.href = '/'} />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

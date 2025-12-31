@@ -1,14 +1,14 @@
-interface FooterProps {
-  onProcessClick?: () => void;
-}
+import { Link } from 'react-router-dom';
 
-export function Footer({ onProcessClick }: FooterProps) {
+export function Footer() {
   return (
     <footer className="bg-black">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           <div className="md:col-span-4">
-            <h3 className="text-3xl font-light text-white mb-6">Bay Aluminium</h3>
+            <Link to="/">
+              <h3 className="text-3xl font-light text-white mb-6 hover:text-gray-300 transition-colors">Bay Aluminium</h3>
+            </Link>
             <p className="text-gray-400 leading-relaxed font-light text-lg">
               Leading provider of premium aluminum ingots and alloys with cutting-edge smelting technology.
             </p>
@@ -17,10 +17,18 @@ export function Footer({ onProcessClick }: FooterProps) {
           <div className="md:col-span-3">
             <h4 className="text-white font-light mb-6 text-sm">Products</h4>
             <ul className="space-y-3 text-gray-400 font-light">
-              <li className="hover:text-white transition-colors cursor-pointer">ADC 12 Alloy</li>
-              <li className="hover:text-white transition-colors cursor-pointer">LM24 Alloy</li>
-              <li className="hover:text-white transition-colors cursor-pointer">A380 Alloy</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Custom Alloys</li>
+              <li>
+                <Link to="/adc12" className="hover:text-white transition-colors">ADC 12 Alloy</Link>
+              </li>
+              <li>
+                <Link to="/lm24" className="hover:text-white transition-colors">LM24 Alloy</Link>
+              </li>
+              <li>
+                <Link to="/a380" className="hover:text-white transition-colors">A380 Alloy</Link>
+              </li>
+              <li>
+                <Link to="/custom-alloys" className="hover:text-white transition-colors">Custom Alloys</Link>
+              </li>
             </ul>
           </div>
 
@@ -30,7 +38,9 @@ export function Footer({ onProcessClick }: FooterProps) {
               <li>
                 <a href="#about" className="hover:text-white transition-colors">About Us</a>
               </li>
-              <li onClick={onProcessClick} className="hover:text-white transition-colors cursor-pointer">Our Process</li>
+              <li>
+                <Link to="/process" className="hover:text-white transition-colors">Our Process</Link>
+              </li>
               <li className="hover:text-white transition-colors cursor-pointer">Quality</li>
             </ul>
           </div>
