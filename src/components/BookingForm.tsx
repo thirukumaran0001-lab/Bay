@@ -57,19 +57,17 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-white shadow-2xl overflow-hidden border-4 border-red-600">
-        <div className="absolute top-0 left-0 right-0 h-2 bg-red-600"></div>
-
-        <div className="p-8">
-          <div className="flex justify-between items-start mb-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-black border border-white/20 shadow-2xl overflow-hidden">
+        <div className="p-8 sm:p-12">
+          <div className="flex justify-between items-start mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2 border-b-4 border-red-600 pb-2 inline-block">Book a Call</h2>
-              <p className="text-gray-700 mt-4 font-medium">Let's discuss your aluminum requirements</p>
+              <h2 className="text-4xl font-light text-white mb-3">Book a Call</h2>
+              <p className="text-gray-400 font-light">Let's discuss your aluminum requirements</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-gray-100 transition-colors text-gray-600 hover:text-gray-900"
+              className="p-2 hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
             >
               <X className="w-6 h-6" />
             </button>
@@ -77,17 +75,17 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
           {isSuccess ? (
             <div className="py-12 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-red-600 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Success!</h3>
-              <p className="text-gray-700 font-medium">We'll get back to you shortly.</p>
+              <h3 className="text-2xl font-light text-white mb-2">Success!</h3>
+              <p className="text-gray-400 font-light">We'll get back to you shortly.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="company_name" className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
+                  <label htmlFor="company_name" className="block text-sm font-light text-white mb-2">
                     Company Name *
                   </label>
                   <input
@@ -97,13 +95,13 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     required
                     value={formData.company_name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all font-medium"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
                     placeholder="Your Company"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="contact_name" className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
+                  <label htmlFor="contact_name" className="block text-sm font-light text-white mb-2">
                     Contact Name *
                   </label>
                   <input
@@ -113,7 +111,7 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     required
                     value={formData.contact_name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all font-medium"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
                     placeholder="John Doe"
                   />
                 </div>
@@ -121,7 +119,7 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
+                  <label htmlFor="email" className="block text-sm font-light text-white mb-2">
                     Email *
                   </label>
                   <input
@@ -131,13 +129,13 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all font-medium"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
                     placeholder="john@company.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
+                  <label htmlFor="phone" className="block text-sm font-light text-white mb-2">
                     Phone
                   </label>
                   <input
@@ -146,14 +144,14 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all font-medium"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
+                <label htmlFor="message" className="block text-sm font-light text-white mb-2">
                   Message
                 </label>
                 <textarea
@@ -162,13 +160,13 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all resize-none font-medium"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all resize-none font-light"
                   placeholder="Tell us about your requirements..."
                 />
               </div>
 
               {error && (
-                <div className="p-4 bg-red-50 border-2 border-red-600 text-red-700 text-sm font-bold">
+                <div className="p-4 bg-red-500/10 border border-red-500/50 text-red-400 text-sm font-light">
                   {error}
                 </div>
               )}
@@ -176,10 +174,10 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-red-600 text-white font-bold uppercase tracking-wider shadow-lg hover:bg-red-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                className="w-full py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-light hover:bg-white/20 hover:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
               >
                 {isSubmitting ? (
-                  'SUBMITTING...'
+                  'Submitting...'
                 ) : (
                   <>
                     Send Message
