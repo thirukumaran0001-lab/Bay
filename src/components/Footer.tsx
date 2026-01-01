@@ -61,7 +61,7 @@ export function Footer() {
             <h4 className="text-white font-light mb-6 text-sm tracking-wider uppercase">Contact</h4>
             <ul className="space-y-4 text-gray-400 font-light">
               <li className="transition-colors duration-300 hover:text-red-300 cursor-pointer">
-                <a href="mailto:info@bayaluminium.com">info@bayaluminium.com</a>
+                <a href="mailto:admin@bayaluminium.com.my">admin@bayaluminium.com.my</a>
               </li>
               <li className="transition-colors duration-300 hover:text-red-300 cursor-pointer">
                 <a href="tel:+60103668054">+60103668054</a>
