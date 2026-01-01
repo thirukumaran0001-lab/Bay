@@ -58,7 +58,7 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm animate-fadeIn" onClick={onClose}>
-      <div className="relative w-full max-w-2xl bg-black border border-white/20 shadow-2xl overflow-hidden animate-scaleIn" onClick={(e) => e.stopPropagation()}>
+      <div className="relative w-full max-w-2xl bg-black border-2 border-red-500/30 shadow-2xl shadow-red-500/10 overflow-hidden animate-scaleIn" onClick={(e) => e.stopPropagation()}>
         <div className="p-8 sm:p-12">
           <div className="flex justify-between items-start mb-8">
             <div>
@@ -75,8 +75,8 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
           {isSuccess ? (
             <div className="py-12 text-center animate-scaleIn">
-              <div className="w-20 h-20 mx-auto mb-6 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center animate-scaleIn">
-                <CheckCircle className="w-10 h-10 text-white animate-scaleIn" />
+              <div className="w-20 h-20 mx-auto mb-6 bg-red-600/20 backdrop-blur-sm border-2 border-red-500/50 flex items-center justify-center animate-scaleIn shadow-lg shadow-red-500/30">
+                <CheckCircle className="w-10 h-10 text-red-400 animate-scaleIn" />
               </div>
               <h3 className="text-2xl font-light text-white mb-2 animate-slideUp">Success!</h3>
               <p className="text-gray-400 font-light animate-slideUp" style={{ animationDelay: '100ms' }}>We'll get back to you shortly.</p>
@@ -174,7 +174,7 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-light hover:bg-white/20 hover:border-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                className="w-full py-4 bg-red-600/20 backdrop-blur-sm border-2 border-red-500/40 text-white font-light hover:bg-red-600/30 hover:border-red-500/70 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
               >
                 {isSubmitting ? (
                   'Submitting...'

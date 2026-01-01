@@ -57,12 +57,13 @@ export function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group border-t border-gray-200 pt-8 transition-all duration-700 cursor-default hover:border-gray-400 ${
+              className={`group border-t-2 border-gray-200 pt-8 transition-all duration-700 cursor-default hover:border-red-500 relative ${
                 featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <h3 className="text-2xl font-light text-black mb-6 transition-transform duration-300 group-hover:translate-x-2">{feature.title}</h3>
+              <div className="absolute top-0 left-0 h-0.5 bg-red-500 w-0 group-hover:w-24 transition-all duration-500"></div>
+              <h3 className="text-2xl font-light text-black mb-6 transition-all duration-300 group-hover:translate-x-2 group-hover:text-red-600">{feature.title}</h3>
               <p className="text-lg text-gray-600 font-light leading-relaxed">{feature.description}</p>
             </div>
           ))}
@@ -81,8 +82,8 @@ export function Features() {
                 }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
-                <div className="w-2 h-2 rounded-full bg-black mt-3 flex-shrink-0 transition-all duration-300 group-hover:scale-150 group-hover:bg-gray-600"></div>
-                <span className="text-lg text-gray-700 font-light leading-relaxed">{alloy}</span>
+                <div className="w-2 h-2 rounded-full bg-black mt-3 flex-shrink-0 transition-all duration-300 group-hover:scale-150 group-hover:bg-red-600 group-hover:shadow-lg group-hover:shadow-red-500/50"></div>
+                <span className="text-lg text-gray-700 font-light leading-relaxed group-hover:text-gray-900">{alloy}</span>
               </div>
             ))}
           </div>

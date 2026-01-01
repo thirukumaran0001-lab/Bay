@@ -35,7 +35,7 @@ export function CursorGlow() {
         style={{
           left: position.x,
           top: position.y,
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(239, 68, 68, 0.04) 0%, rgba(255, 255, 255, 0.02) 30%, transparent 70%)',
           transition: 'left 0.1s ease-out, top 0.1s ease-out',
         }}
       />

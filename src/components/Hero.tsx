@@ -48,16 +48,16 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
           <div className="flex flex-col sm:flex-row gap-10 items-start mb-32 animate-slideUp" style={{ animationDelay: '200ms' }}>
             <button
               onClick={onBookCall}
-              className="group relative px-12 py-5 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-light text-lg overflow-hidden transition-all duration-500 flex items-center gap-3 hover:scale-105 hover:shadow-2xl hover:shadow-white/10"
+              className="group relative px-12 py-5 bg-red-600/20 backdrop-blur-sm border-2 border-red-500/40 text-white font-light text-lg overflow-hidden transition-all duration-500 flex items-center gap-3 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30 hover:border-red-500/70"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
               <span className="relative">Book a Call</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative" />
             </button>
 
             <button
               onClick={onLearnMore}
-              className="group px-12 py-5 border border-white/20 text-white font-light text-lg transition-all duration-500 hover:scale-105 hover:bg-white/5 hover:border-white/40 hover:shadow-lg hover:shadow-white/5"
+              className="group px-12 py-5 border-2 border-white/20 text-white font-light text-lg transition-all duration-500 hover:scale-105 hover:bg-white/5 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10"
             >
               Learn More
             </button>
@@ -68,13 +68,14 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group cursor-default animate-slideUp"
+              className="group cursor-default animate-slideUp relative"
               style={{ animationDelay: `${300 + index * 100}ms` }}
             >
-              <div className="text-4xl font-light text-white mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-100">
+              <div className="absolute -left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500/50 via-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="text-4xl font-light text-white mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-red-100">
                 {stat.value}
               </div>
-              <div className="text-gray-400 text-sm font-light transition-colors duration-300 group-hover:text-gray-300">
+              <div className="text-gray-400 text-sm font-light transition-colors duration-300 group-hover:text-red-300">
                 {stat.label}
               </div>
             </div>

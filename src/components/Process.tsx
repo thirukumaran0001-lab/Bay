@@ -46,17 +46,18 @@ export function Process() {
               <div
                 key={index}
                 ref={elementRef}
-                className={`group border-t border-white/20 pt-12 grid md:grid-cols-12 gap-8 transition-all duration-1000 cursor-default hover:border-white/40 ${
+                className={`group border-t-2 border-white/20 pt-12 grid md:grid-cols-12 gap-8 transition-all duration-1000 cursor-default hover:border-red-500/60 relative ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                 }`}
               >
+                <div className="absolute top-0 left-0 h-0.5 bg-red-500 w-0 group-hover:w-32 transition-all duration-500"></div>
                 <div className="md:col-span-2">
-                  <div className="text-6xl font-light text-white/30 transition-all duration-500 group-hover:text-white/50 group-hover:scale-110">
+                  <div className="text-6xl font-light text-white/30 transition-all duration-500 group-hover:text-red-500/80 group-hover:scale-110">
                     {step.step}
                   </div>
                 </div>
                 <div className="md:col-span-10">
-                  <h3 className="text-3xl font-light text-white mb-6 transition-transform duration-300 group-hover:translate-x-2">
+                  <h3 className="text-3xl font-light text-white mb-6 transition-all duration-300 group-hover:translate-x-2 group-hover:text-red-100">
                     {step.title}
                   </h3>
                   <p className="text-lg text-gray-400 font-light leading-relaxed max-w-3xl transition-colors duration-300 group-hover:text-gray-300">

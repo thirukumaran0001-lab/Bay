@@ -51,15 +51,16 @@ export function AboutUs() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`group cursor-default transition-all duration-700 ${
+              className={`group cursor-default transition-all duration-700 relative ${
                 statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="text-5xl font-light text-black mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-700">
+              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-red-500 via-red-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="text-5xl font-light text-black mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-red-600">
                 {stat.value}
               </div>
-              <div className="text-gray-600 font-light transition-colors duration-300 group-hover:text-gray-800">
+              <div className="text-gray-600 font-light transition-colors duration-300 group-hover:text-red-800">
                 {stat.label}
               </div>
             </div>
@@ -70,12 +71,13 @@ export function AboutUs() {
           {details.map((detail, index) => (
             <div
               key={index}
-              className={`group border-t border-gray-200 pt-8 transition-all duration-700 cursor-default hover:border-gray-400 ${
+              className={`group border-t-2 border-gray-200 pt-8 transition-all duration-700 cursor-default hover:border-red-500 relative ${
                 detailsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <h3 className="text-2xl font-light text-black mb-6 transition-transform duration-300 group-hover:translate-x-2">
+              <div className="absolute top-0 left-0 h-0.5 bg-red-500 w-0 group-hover:w-20 transition-all duration-500"></div>
+              <h3 className="text-2xl font-light text-black mb-6 transition-all duration-300 group-hover:translate-x-2 group-hover:text-red-600">
                 {detail.title}
               </h3>
               <p className="text-lg text-gray-600 font-light leading-relaxed">
