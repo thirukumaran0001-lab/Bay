@@ -25,12 +25,12 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 opacity-30 transition-transform duration-1000"
+      <div className="absolute inset-0 opacity-40 transition-transform duration-1000"
         style={{
           transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * 0.01}px)`
         }}>
         <spline-viewer
-          url="https://prod.spline.design/wy5ZRvozoQKCKgXR/scene.splinecode"
+          url="https://prod.spline.design/f0WUE-mimz7SW8il/scene.splinecode"
           className="w-full h-full"
         ></spline-viewer>
       </div>
