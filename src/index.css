@@ -149,3 +149,33 @@ spline-viewer #logo {
 spline-viewer::part(logo) {
   display: none !important;
 }
+
+spline-viewer {
+  pointer-events: none !important;
+}
+
+spline-viewer > div {
+  pointer-events: none !important;
+}
+
+spline-viewer canvas {
+  pointer-events: none !important;
+}
+
+spline-viewer #watermark,
+spline-viewer .watermark,
+spline-viewer [class*="watermark"],
+spline-viewer [id*="watermark"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+spline-viewer a,
+spline-viewer a[href*="spline"],
+spline-viewer a[href*="design"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
