@@ -1,8 +1,39 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 export function AboutUs() {
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { elementRef: statsRef, isVisible: statsVisible } = useScrollAnimation();
+  const { elementRef: detailsRef, isVisible: detailsVisible } = useScrollAnimation();
+
+  const stats = [
+    { value: '5+', label: 'Years of Excellence' },
+    { value: '50+', label: 'Global Partners' },
+    { value: '99.9%', label: 'Purity Standard' }
+  ];
+
+  const details = [
+    {
+      title: 'Expert Team',
+      description: 'Skilled professionals with years of industry experience in metallurgy and production engineering'
+    },
+    {
+      title: 'Certified Quality',
+      description: 'ISO standards and industry certifications ensuring consistent quality across all products'
+    },
+    {
+      title: 'Precision Focus',
+      description: 'Meticulous attention to every detail in production and quality control processes'
+    },
+    {
+      title: 'Global Reach',
+      description: 'Serving automotive, aerospace, and industrial applications worldwide with reliable delivery'
+    }
+  ];
+
   return (
     <section id="about" className="py-40 bg-white">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="mb-32">
+        <div ref={headerRef} className={`mb-32 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-6xl sm:text-7xl lg:text-8xl font-light text-black mb-12 tracking-tight leading-[1.1]">
             About Bay Aluminium
           </h2>
@@ -16,46 +47,42 @@ export function AboutUs() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-24 mb-32">
-          <div>
-            <div className="text-5xl font-light text-black mb-4">5+</div>
-            <div className="text-gray-600 font-light">Years of Excellence</div>
-          </div>
-          <div>
-            <div className="text-5xl font-light text-black mb-4">50+</div>
-            <div className="text-gray-600 font-light">Global Partners</div>
-          </div>
-          <div>
-            <div className="text-5xl font-light text-black mb-4">99.9%</div>
-            <div className="text-gray-600 font-light">Purity Standard</div>
-          </div>
+        <div ref={statsRef} className="grid md:grid-cols-3 gap-24 mb-32">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`group cursor-default transition-all duration-700 ${
+                statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="text-5xl font-light text-black mb-4 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-700">
+                {stat.value}
+              </div>
+              <div className="text-gray-600 font-light transition-colors duration-300 group-hover:text-gray-800">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          <div className="border-t border-gray-200 pt-8">
-            <h3 className="text-2xl font-light text-black mb-6">Expert Team</h3>
-            <p className="text-lg text-gray-600 font-light leading-relaxed">
-              Skilled professionals with years of industry experience in metallurgy and production engineering
-            </p>
-          </div>
-          <div className="border-t border-gray-200 pt-8">
-            <h3 className="text-2xl font-light text-black mb-6">Certified Quality</h3>
-            <p className="text-lg text-gray-600 font-light leading-relaxed">
-              ISO standards and industry certifications ensuring consistent quality across all products
-            </p>
-          </div>
-          <div className="border-t border-gray-200 pt-8">
-            <h3 className="text-2xl font-light text-black mb-6">Precision Focus</h3>
-            <p className="text-lg text-gray-600 font-light leading-relaxed">
-              Meticulous attention to every detail in production and quality control processes
-            </p>
-          </div>
-          <div className="border-t border-gray-200 pt-8">
-            <h3 className="text-2xl font-light text-black mb-6">Global Reach</h3>
-            <p className="text-lg text-gray-600 font-light leading-relaxed">
-              Serving automotive, aerospace, and industrial applications worldwide with reliable delivery
-            </p>
-          </div>
+        <div ref={detailsRef} className="grid md:grid-cols-2 gap-16">
+          {details.map((detail, index) => (
+            <div
+              key={index}
+              className={`group border-t border-gray-200 pt-8 transition-all duration-700 cursor-default hover:border-gray-400 ${
+                detailsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <h3 className="text-2xl font-light text-black mb-6 transition-transform duration-300 group-hover:translate-x-2">
+                {detail.title}
+              </h3>
+              <p className="text-lg text-gray-600 font-light leading-relaxed">
+                {detail.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

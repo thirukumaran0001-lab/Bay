@@ -7,11 +7,13 @@ import { CustomAlloys } from './pages/CustomAlloys';
 import { ProcessDetailsWrapper } from './components/ProcessDetailsWrapper';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { CursorGlow } from './components/CursorGlow';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <CursorGlow />
       <div className="min-h-screen bg-black">
         <Routes>
           <Route path="/" element={<Home />} />

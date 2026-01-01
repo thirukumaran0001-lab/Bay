@@ -1,4 +1,10 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 export function Features() {
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { elementRef: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+  const { elementRef: alloysRef, isVisible: alloysVisible } = useScrollAnimation();
+
   const features = [
     {
       title: 'Superior Quality',
@@ -38,7 +44,7 @@ export function Features() {
   return (
     <section className="py-40 bg-white">
       <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="mb-32">
+        <div ref={headerRef} className={`mb-32 transition-all duration-1000 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-6xl sm:text-7xl lg:text-8xl font-light text-black mb-12 tracking-tight leading-[1.1]">
             Excellence in Every Ingot
           </h2>
@@ -47,23 +53,35 @@ export function Features() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 mb-32">
+        <div ref={featuresRef} className="grid md:grid-cols-2 gap-16 mb-32">
           {features.map((feature, index) => (
-            <div key={index} className="border-t border-gray-200 pt-8">
-              <h3 className="text-2xl font-light text-black mb-6">{feature.title}</h3>
+            <div
+              key={index}
+              className={`group border-t border-gray-200 pt-8 transition-all duration-700 cursor-default hover:border-gray-400 ${
+                featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <h3 className="text-2xl font-light text-black mb-6 transition-transform duration-300 group-hover:translate-x-2">{feature.title}</h3>
               <p className="text-lg text-gray-600 font-light leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="border-t border-gray-200 pt-16">
+        <div ref={alloysRef} className={`border-t border-gray-200 pt-16 transition-all duration-1000 ${alloysVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h3 className="text-4xl sm:text-5xl font-light text-black mb-16 tracking-tight">
             Our Alloy Range
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {alloys.map((alloy, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <div className="w-2 h-2 rounded-full bg-black mt-3 flex-shrink-0"></div>
+              <div
+                key={index}
+                className={`group flex items-start gap-4 transition-all duration-700 hover:translate-x-2 cursor-default ${
+                  alloysVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                }`}
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
+                <div className="w-2 h-2 rounded-full bg-black mt-3 flex-shrink-0 transition-all duration-300 group-hover:scale-150 group-hover:bg-gray-600"></div>
                 <span className="text-lg text-gray-700 font-light leading-relaxed">{alloy}</span>
               </div>
             ))}

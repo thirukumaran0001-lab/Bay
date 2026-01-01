@@ -57,8 +57,8 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-black border border-white/20 shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm animate-fadeIn" onClick={onClose}>
+      <div className="relative w-full max-w-2xl bg-black border border-white/20 shadow-2xl overflow-hidden animate-scaleIn" onClick={(e) => e.stopPropagation()}>
         <div className="p-8 sm:p-12">
           <div className="flex justify-between items-start mb-8">
             <div>
@@ -67,19 +67,19 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
+              className="p-2 hover:bg-white/10 transition-all duration-300 text-gray-400 hover:text-white hover:rotate-90"
             >
               <X className="w-6 h-6" />
             </button>
           </div>
 
           {isSuccess ? (
-            <div className="py-12 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                <CheckCircle className="w-10 h-10 text-white" />
+            <div className="py-12 text-center animate-scaleIn">
+              <div className="w-20 h-20 mx-auto mb-6 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center animate-scaleIn">
+                <CheckCircle className="w-10 h-10 text-white animate-scaleIn" />
               </div>
-              <h3 className="text-2xl font-light text-white mb-2">Success!</h3>
-              <p className="text-gray-400 font-light">We'll get back to you shortly.</p>
+              <h3 className="text-2xl font-light text-white mb-2 animate-slideUp">Success!</h3>
+              <p className="text-gray-400 font-light animate-slideUp" style={{ animationDelay: '100ms' }}>We'll get back to you shortly.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
