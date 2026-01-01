@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export function Features() {
@@ -33,12 +34,12 @@ export function Features() {
   ];
 
   const alloys = [
-    'ADC 12 - High silicon die-casting alloy (Si: 9.6-12%)',
-    'LM24 - General purpose die-casting alloy',
-    'LM25 - Sand and gravity die-casting alloy',
-    'A7 - High-purity aluminum for electrical applications',
-    'A380 - High-strength alloy for complex castings',
-    'Custom compositions tailored to specifications'
+    { name: 'ADC 12 - High silicon die-casting alloy (Si: 9.6-12%)', path: '/adc12' },
+    { name: 'LM24 - General purpose die-casting alloy', path: '/lm24' },
+    { name: 'LM25 - Sand and gravity die-casting alloy', path: '/lm25' },
+    { name: 'A7 - High-purity aluminum for electrical applications', path: '/a7' },
+    { name: 'A380 - High-strength alloy for complex castings', path: '/a380' },
+    { name: 'Custom compositions tailored to specifications', path: '/custom-alloys' }
   ];
 
   return (
@@ -75,16 +76,17 @@ export function Features() {
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {alloys.map((alloy, index) => (
-              <div
+              <Link
                 key={index}
-                className={`group flex items-start gap-4 transition-all duration-700 hover:translate-x-2 cursor-default ${
+                to={alloy.path}
+                className={`group flex items-start gap-4 transition-all duration-700 hover:translate-x-2 cursor-pointer ${
                   alloysVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
                 }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
               >
                 <div className="w-2 h-2 rounded-full bg-black mt-3 flex-shrink-0 transition-all duration-300 group-hover:scale-150 group-hover:bg-red-600 group-hover:shadow-lg group-hover:shadow-red-500/50"></div>
-                <span className="text-lg text-gray-700 font-light leading-relaxed group-hover:text-gray-900">{alloy}</span>
-              </div>
+                <span className="text-lg text-gray-700 font-light leading-relaxed group-hover:text-gray-900">{alloy.name}</span>
+              </Link>
             ))}
           </div>
         </div>
