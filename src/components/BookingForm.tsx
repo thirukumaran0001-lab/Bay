@@ -26,6 +26,15 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
     try {
       await submitContactForm(formData);
+
+      await fetch('https://hook.eu1.make.com/wpem3gcn8d52agmqaombpx0drbf14dm4', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
       setIsSuccess(true);
       setTimeout(() => {
         onClose();
