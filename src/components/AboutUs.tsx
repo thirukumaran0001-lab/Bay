@@ -26,7 +26,7 @@ export function AboutUs() {
     },
     {
       title: 'Global Reach',
-      description: 'Serving automotive, aerospace, and industrial applications worldwide with reliable delivery'
+      description: 'Serving automotive and industrial applications worldwide with reliable delivery'
     }
   ];
 
