@@ -11,7 +11,7 @@ export function Process() {
     },
     {
       title: 'Alloying & Composition',
-      description: 'Precise amounts of silicon, copper, and other elements are added to create specific alloys like ADC 12, LM24, or A380 with exact compositional control.',
+      description: 'Precise amounts of silicon, copper, and other elements are added to create specific alloys like ADC12, LM25, or LM6 with exact compositional control.',
       step: '02'
     },
     {
