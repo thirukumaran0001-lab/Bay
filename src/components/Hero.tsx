@@ -42,7 +42,7 @@ export function Hero({ onBookCall, onLearnMore }: HeroProps) {
           </h1>
 
           <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light mb-16 max-w-3xl leading-relaxed animate-slideUp" style={{ animationDelay: '100ms' }}>
-            Premium aluminum ingots and alloys for automotive, aerospace, and industrial applications worldwide.
+            Premium aluminum ingots and alloys for automotive and industrial applications worldwide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-10 items-start mb-32 animate-slideUp" style={{ animationDelay: '200ms' }}>
