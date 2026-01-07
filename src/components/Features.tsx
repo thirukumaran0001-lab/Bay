@@ -13,7 +13,15 @@ export function Features() {
     },
     {
       title: 'Multiple Alloys',
-      description: 'Comprehensive range including ADC 12, LM24, A380, and custom alloy compositions tailored to your specifications.'
+      description: 'Comprehensive range including ADC12, LM25, and LM6 alloys tailored to your specifications.'
+    },
+    {
+      title: 'Dross Recovery',
+      description: 'Advanced dross recovery services to maximize material efficiency and reduce waste in your operations.'
+    },
+    {
+      title: 'SW104 Licensed',
+      description: 'Fully licensed and compliant with SW104 regulations for waste management and recycling operations.'
     },
     {
       title: 'Fast Production',
@@ -22,24 +30,13 @@ export function Features() {
     {
       title: 'Industry Certified',
       description: 'ISO 9001 certified processes and compliance with international aluminum standards.'
-    },
-    {
-      title: 'Consistent Supply',
-      description: 'Reliable inventory and production capacity to meet your ongoing demands.'
-    },
-    {
-      title: 'Global Shipping',
-      description: 'Worldwide delivery network ensuring your materials arrive safely and on schedule.'
     }
   ];
 
   const alloys = [
-    { name: 'ADC 12 - High silicon die-casting alloy (Si: 9.6-12%)', path: '/adc12' },
-    { name: 'LM24 - General purpose die-casting alloy', path: '/lm24' },
+    { name: 'ADC12 - High silicon die-casting alloy (Si: 9.6-12%)', path: '/adc12' },
     { name: 'LM25 - Sand and gravity die-casting alloy', path: '/lm25' },
-    { name: 'A7 - High-purity aluminum for electrical applications', path: '/a7' },
-    { name: 'A380 - High-strength alloy for complex castings', path: '/a380' },
-    { name: 'Custom compositions tailored to specifications', path: '/custom-alloys' }
+    { name: 'LM6 - High-purity aluminum-silicon alloy for general casting', path: '/lm6' }
   ];
 
   return (
@@ -50,7 +47,7 @@ export function Features() {
             Excellence in Every Ingot
           </h2>
           <p className="text-xl sm:text-2xl text-gray-700 max-w-4xl font-light leading-relaxed">
-            Industry-leading aluminum alloys for automotive, aerospace, and industrial applications worldwide.
+            Industry-leading aluminum alloys for automotive and industrial applications worldwide.
           </p>
         </div>
 

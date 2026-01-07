@@ -1,11 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ADC12 } from './pages/ADC12';
-import { LM24 } from './pages/LM24';
 import { LM25 } from './pages/LM25';
-import { A7 } from './pages/A7';
-import { A380 } from './pages/A380';
-import { CustomAlloys } from './pages/CustomAlloys';
+import { LM6 } from './pages/LM6';
 import { ProcessDetailsWrapper } from './components/ProcessDetailsWrapper';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -20,11 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/adc12" element={<ADC12 />} />
-          <Route path="/lm24" element={<LM24 />} />
           <Route path="/lm25" element={<LM25 />} />
-          <Route path="/a7" element={<A7 />} />
-          <Route path="/a380" element={<A380 />} />
-          <Route path="/custom-alloys" element={<CustomAlloys />} />
+          <Route path="/lm6" element={<LM6 />} />
           <Route path="/process" element={<ProcessDetailsWrapper />} />
         </Routes>
         <Footer />

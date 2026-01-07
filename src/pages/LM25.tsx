@@ -157,14 +157,14 @@ export function LM25() {
               </div>
             </div>
             <div className="border-t border-white/10 pt-8">
-              <h3 className="text-2xl font-light mb-6">Marine & Aerospace</h3>
+              <h3 className="text-2xl font-light mb-6">Marine Applications</h3>
               <div className="space-y-3 text-gray-400 font-light leading-relaxed">
                 <p>Marine propellers and fittings</p>
                 <p>Boat and yacht components</p>
-                <p>Aircraft structural parts</p>
-                <p>Helicopter rotor hubs</p>
-                <p>Aerospace brackets and mounts</p>
-                <p>Drone and UAV components</p>
+                <p>Hull and deck hardware</p>
+                <p>Marine pumps and valves</p>
+                <p>Anchor windlass components</p>
+                <p>Sailing hardware</p>
               </div>
             </div>
             <div className="border-t border-white/10 pt-8">
