@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface MetalPrice {
@@ -10,27 +10,85 @@ interface MetalPrice {
   unit: string;
 }
 
-export function LMEWidget() {
-  const [prices, setPrices] = useState<MetalPrice[]>([
-    {
-      name: 'Aluminum',
-      symbol: 'ALU',
-      price: 2385.50,
-      change: 15.50,
-      changePercent: 0.65,
-      unit: 'USD/MT'
-    }
-  ]);
+const DEMO_PRICES: MetalPrice[] = [
+  {
+    name: 'Aluminum',
+    symbol: 'ALU',
+    price: 2385.50,
+    change: 15.50,
+    changePercent: 0.65,
+    unit: 'USD/MT'
+  }
+];
 
+export function LMEWidget() {
+  const [prices, setPrices] = useState<MetalPrice[]>(DEMO_PRICES);
   const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [previousPrice, setPreviousPrice] = useState<number>(DEMO_PRICES[0].price);
+  const [isLiveData, setIsLiveData] = useState(false);
+
+  const apiKey = import.meta.env.VITE_METALS_API_KEY;
+
+  const fetchLMEPrices = async () => {
+    if (!apiKey) {
+      setIsLiveData(false);
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(
+        `https://api.metals.dev/v1/latest?api_key=${apiKey}&currency=USD&unit=tonne`
+      );
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch LME prices');
+      }
+
+      const data = await response.json();
+
+      if (data.metals && data.metals.aluminum) {
+        const currentPrice = data.metals.aluminum;
+        const change = currentPrice - previousPrice;
+        const changePercent = (change / previousPrice) * 100;
+
+        setPrices([
+          {
+            name: 'Aluminum',
+            symbol: 'ALU',
+            price: currentPrice,
+            change: change,
+            changePercent: changePercent,
+            unit: 'USD/MT'
+          }
+        ]);
+
+        setPreviousPrice(currentPrice);
+        setLastUpdate(new Date());
+        setIsLiveData(true);
+      }
+    } catch (err) {
+      setError('Unable to fetch live prices');
+      console.error('Error fetching LME prices:', err);
+      setIsLiveData(false);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
+    fetchLMEPrices();
+
     const interval = setInterval(() => {
-      setLastUpdate(new Date());
-    }, 60000);
+      fetchLMEPrices();
+    }, 300000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [apiKey]);
 
   return (
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white rounded-lg p-6 shadow-2xl border border-white/10">
@@ -41,10 +99,22 @@ export function LMEWidget() {
             Updated: {lastUpdate.toLocaleTimeString()}
           </p>
         </div>
-        <div className="text-xs text-white/40 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
-          Live Market
+        <div className={`text-xs px-3 py-1.5 rounded-full border flex items-center gap-1.5 ${
+          isLiveData
+            ? 'text-green-400 bg-green-400/10 border-green-400/20'
+            : 'text-white/40 bg-white/5 border-white/10'
+        }`}>
+          {isLoading && <div className="w-2 h-2 rounded-full bg-current animate-pulse"></div>}
+          {isLiveData ? 'Live Data' : 'Demo Mode'}
         </div>
       </div>
+
+      {error && (
+        <div className="mb-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex items-start gap-2">
+          <AlertCircle className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+          <p className="text-xs text-yellow-500/90">{error}</p>
+        </div>
+      )}
 
       <div className="space-y-4">
         {prices.map((metal, index) => (
@@ -87,6 +157,11 @@ export function LMEWidget() {
       </div>
 
       <div className="mt-6 pt-4 border-t border-white/10">
+        {!isLiveData && !isLoading && (
+          <p className="text-xs text-white/50 text-center mb-2">
+            Configure VITE_METALS_API_KEY for live data
+          </p>
+        )}
         <p className="text-xs text-white/40 text-center">
           Prices are indicative and subject to market conditions
         </p>
