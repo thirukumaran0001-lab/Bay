@@ -64,7 +64,7 @@ export function Footer() {
                 <a href="mailto:admin@bayaluminium.com.my">admin@bayaluminium.com.my</a>
               </li>
               <li className="transition-colors duration-300 hover:text-red-300 cursor-pointer">
-                <a href="tel:+60103668054">+60103668054</a>
+                <a href="tel:+60198765432">+60198765432</a>
               </li>
               <li className="transition-colors duration-300 hover:text-red-300">Lot 18, Jalan Zurah 5A<br />Selangor, Malaysia</li>
             </ul>
