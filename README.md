@@ -12,18 +12,23 @@ This project is fully configured for Netlify deployment.
 2. Log in to [Netlify](https://app.netlify.com)
 3. Click "Add new site" → "Import an existing project"
 4. Connect your Git provider and select your repository
-5. Netlify will automatically detect the build settings from `netlify.toml`
-6. Add the required environment variables (see below)
+5. Netlify will automatically detect the build settings from `netlify.toml`:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+6. (Optional) Add environment variables for database functionality
 7. Click "Deploy site"
+8. Your site will be live in minutes!
 
 ### Environment Variables
 
-Add these environment variables in your Netlify dashboard under Site settings → Environment variables:
+The application will work without environment variables, but form submissions will only be sent to the Make.com webhook.
+
+For full functionality with database storage, add these environment variables in your Netlify dashboard under Site settings → Environment variables:
 
 - `VITE_SUPABASE_URL` - Your Supabase project URL
 - `VITE_SUPABASE_ANON_KEY` - Your Supabase anonymous key
 
-These are already configured in your local `.env` file and will need to be added to Netlify for production.
+If these variables are not set, the contact form will still work and send data to the webhook, but submissions won't be saved to the database.
 
 ### Build Configuration
 

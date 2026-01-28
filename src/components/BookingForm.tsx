@@ -25,15 +25,23 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
     setError('');
 
     try {
-      await submitContactForm(formData);
+      try {
+        await submitContactForm(formData);
+      } catch (dbError) {
+        console.error('Database save failed:', dbError);
+      }
 
-      await fetch('https://hook.eu1.make.com/wpem3gcn8d52agmqaombpx0drbf14dm4', {
+      const webhookResponse = await fetch('https://hook.eu1.make.com/wpem3gcn8d52agmqaombpx0drbf14dm4', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
+
+      if (!webhookResponse.ok) {
+        throw new Error('Failed to send message. Please try again.');
+      }
 
       setIsSuccess(true);
       setTimeout(() => {
