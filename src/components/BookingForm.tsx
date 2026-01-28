@@ -1,17 +1,10 @@
 import { useState } from 'react';
 import { X, Send, CheckCircle } from 'lucide-react';
+import { submitContactForm, type ContactSubmission } from '../lib/supabase';
 
 interface BookingFormProps {
   isOpen: boolean;
   onClose: () => void;
-}
-
-interface ContactSubmission {
-  company_name: string;
-  contact_name: string;
-  email: string;
-  phone?: string;
-  message?: string;
 }
 
 export function BookingForm({ isOpen, onClose }: BookingFormProps) {
@@ -32,6 +25,8 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
     setError('');
 
     try {
+      await submitContactForm(formData);
+
       await fetch('https://hook.eu1.make.com/wpem3gcn8d52agmqaombpx0drbf14dm4', {
         method: 'POST',
         headers: {
