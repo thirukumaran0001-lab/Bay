@@ -31,6 +31,22 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
         console.error('Database save failed:', dbError);
       }
 
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabaseAnonKey}`,
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!emailResponse.ok) {
+        console.error('Email notification failed');
+      }
+
       const webhookResponse = await fetch('https://hook.eu1.make.com/wpem3gcn8d52agmqaombpx0drbf14dm4', {
         method: 'POST',
         headers: {
