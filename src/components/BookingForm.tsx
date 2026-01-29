@@ -75,34 +75,34 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm animate-fadeIn" onClick={onClose}>
-      <div className="relative w-full max-w-2xl bg-black border-2 border-red-500/30 shadow-2xl shadow-red-500/10 overflow-hidden animate-scaleIn" onClick={(e) => e.stopPropagation()}>
+      <div className="relative w-full max-w-2xl bg-neutral-950 rounded-lg border border-neutral-800 shadow-premium-lg overflow-hidden animate-scaleIn" onClick={(e) => e.stopPropagation()}>
         <div className="p-8 sm:p-12">
-          <div className="flex justify-between items-start mb-8">
+          <div className="flex justify-between items-start mb-10">
             <div>
-              <h2 className="text-4xl font-light text-white mb-3">Book a Call</h2>
-              <p className="text-gray-400 font-light">Let's discuss your aluminum requirements</p>
+              <h2 className="text-3xl font-semibold text-white mb-2">Book a Call</h2>
+              <p className="text-neutral-400 font-normal text-sm">Let's discuss your aluminum requirements</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-white/10 transition-all duration-300 text-gray-400 hover:text-white hover:rotate-90"
+              className="p-2 rounded-md hover:bg-white/10 transition-all duration-300 text-neutral-400 hover:text-white hover:rotate-90"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
           </div>
 
           {isSuccess ? (
             <div className="py-12 text-center animate-scaleIn">
-              <div className="w-20 h-20 mx-auto mb-6 bg-red-600/20 backdrop-blur-sm border-2 border-red-500/50 flex items-center justify-center animate-scaleIn shadow-lg shadow-red-500/30">
-                <CheckCircle className="w-10 h-10 text-red-400 animate-scaleIn" />
+              <div className="w-16 h-16 mx-auto mb-6 bg-brand-600/10 rounded-full border border-brand-600/30 flex items-center justify-center animate-scaleIn">
+                <CheckCircle className="w-8 h-8 text-brand-600 animate-scaleIn" />
               </div>
-              <h3 className="text-2xl font-light text-white mb-2 animate-slideUp">Success!</h3>
-              <p className="text-gray-400 font-light animate-slideUp" style={{ animationDelay: '100ms' }}>We'll get back to you shortly.</p>
+              <h3 className="text-2xl font-semibold text-white mb-2 animate-slideUp">Success!</h3>
+              <p className="text-neutral-400 font-normal text-sm animate-slideUp" style={{ animationDelay: '100ms' }}>We'll get back to you shortly.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="company_name" className="block text-sm font-light text-white mb-2">
+                  <label htmlFor="company_name" className="block text-sm font-medium text-white mb-2">
                     Company Name *
                   </label>
                   <input
@@ -112,13 +112,13 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     required
                     value={formData.company_name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
+                    className="w-full px-4 py-2.5 rounded-md bg-white/5 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition-all font-normal"
                     placeholder="Your Company"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="contact_name" className="block text-sm font-light text-white mb-2">
+                  <label htmlFor="contact_name" className="block text-sm font-medium text-white mb-2">
                     Contact Name *
                   </label>
                   <input
@@ -128,15 +128,15 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     required
                     value={formData.contact_name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
+                    className="w-full px-4 py-2.5 rounded-md bg-white/5 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition-all font-normal"
                     placeholder="John Doe"
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-light text-white mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                     Email *
                   </label>
                   <input
@@ -146,13 +146,13 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
+                    className="w-full px-4 py-2.5 rounded-md bg-white/5 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition-all font-normal"
                     placeholder="john@company.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-light text-white mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                     Phone
                   </label>
                   <input
@@ -161,14 +161,14 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all font-light"
+                    className="w-full px-4 py-2.5 rounded-md bg-white/5 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition-all font-normal"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-light text-white mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                   Message
                 </label>
                 <textarea
@@ -177,13 +177,13 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all resize-none font-light"
+                  className="w-full px-4 py-2.5 rounded-md bg-white/5 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600 transition-all resize-none font-normal"
                   placeholder="Tell us about your requirements..."
                 />
               </div>
 
               {error && (
-                <div className="p-4 bg-red-500/10 border border-red-500/50 text-red-400 text-sm font-light">
+                <div className="p-4 rounded-md bg-brand-600/10 border border-brand-600/30 text-brand-400 text-sm font-normal">
                   {error}
                 </div>
               )}
@@ -191,14 +191,14 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-red-600/20 backdrop-blur-sm border-2 border-red-500/40 text-white font-light hover:bg-red-600/30 hover:border-red-500/70 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                className="w-full py-3.5 rounded-md bg-brand-600 text-white font-medium hover:bg-brand-700 hover:shadow-brand transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group active:scale-[0.98]"
               >
                 {isSubmitting ? (
                   'Submitting...'
                 ) : (
                   <>
                     Send Message
-                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
               </button>
