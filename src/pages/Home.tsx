@@ -4,7 +4,6 @@ import { Hero } from '../components/Hero';
 import { AboutUs } from '../components/AboutUs';
 import { Process } from '../components/Process';
 import { Features } from '../components/Features';
-import { LMESection } from '../components/LMESection';
 import { BookingForm } from '../components/BookingForm';
 
 export function Home() {
@@ -20,7 +19,6 @@ export function Home() {
       <AboutUs />
       <Process />
       <Features />
-      <LMESection />
       <BookingForm
         isOpen={isBookingFormOpen}
         onClose={() => setIsBookingFormOpen(false)}
