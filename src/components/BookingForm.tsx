@@ -25,8 +25,11 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
     setError('');
 
     try {
+      console.log('Starting form submission...');
+
       try {
         await submitContactForm(formData);
+        console.log('Database save successful');
       } catch (dbError) {
         console.error('Database save failed:', dbError);
       }
@@ -34,19 +37,40 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
       const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-      const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-        },
-        body: JSON.stringify(formData),
+      console.log('Checking environment variables:', {
+        hasUrl: !!supabaseUrl,
+        hasKey: !!supabaseAnonKey,
+        url: supabaseUrl
       });
 
-      if (!emailResponse.ok) {
-        console.error('Email notification failed');
+      if (!supabaseUrl || !supabaseAnonKey) {
+        console.error('Missing Supabase environment variables');
+      } else {
+        try {
+          console.log('Calling edge function...');
+          const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${supabaseAnonKey}`,
+            },
+            body: JSON.stringify(formData),
+          });
+
+          const emailData = await emailResponse.json();
+          console.log('Edge function response:', { status: emailResponse.status, data: emailData });
+
+          if (!emailResponse.ok) {
+            console.error('Email notification failed:', emailData);
+          } else {
+            console.log('Email sent successfully via edge function');
+          }
+        } catch (emailError) {
+          console.error('Edge function error:', emailError);
+        }
       }
 
+      console.log('Calling Make.com webhook...');
       const webhookResponse = await fetch('https://hook.eu1.make.com/wpem3gcn8d52agmqaombpx0drbf14dm4', {
         method: 'POST',
         headers: {
@@ -55,10 +79,15 @@ export function BookingForm({ isOpen, onClose }: BookingFormProps) {
         body: JSON.stringify(formData),
       });
 
+      console.log('Webhook response status:', webhookResponse.status);
+
       if (!webhookResponse.ok) {
+        const webhookError = await webhookResponse.text();
+        console.error('Webhook failed:', webhookError);
         throw new Error('Failed to send message. Please try again.');
       }
 
+      console.log('Form submission completed successfully');
       setIsSuccess(true);
       setTimeout(() => {
         onClose();
