@@ -110,7 +110,7 @@ ${formData.message ? `\nMessage:\n${formData.message}` : ''}
       },
       body: JSON.stringify({
         from: "onboarding@resend.dev",
-        to: ["thirukumaran0001@gmail.com"],
+        to: ["admin@bayaluminium.com.my"],
         subject: `New Contact: ${formData.company_name} - ${formData.contact_name}`,
         html: emailHtml,
         text: emailText,
