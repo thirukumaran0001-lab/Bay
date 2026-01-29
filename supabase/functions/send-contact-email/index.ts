@@ -109,7 +109,7 @@ ${formData.message ? `\nMessage:\n${formData.message}` : ''}
         "Authorization": `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: "Bay Aluminium <noreply@bayaluminium.com.my>",
+        from: "onboarding@resend.dev",
         to: ["thirukumaran0001@gmail.com"],
         subject: `New Contact: ${formData.company_name} - ${formData.contact_name}`,
         html: emailHtml,
